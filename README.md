@@ -16,5 +16,5 @@ _For example, if your first two cards are four and nine, five would be “inside
 If the card is the same as either boundary card, the dealer again reshuffles the dealt card and picks from the top.
 
 >### Bonus Round "Double or Nothing"
-
+>
 >The player can choose to double their win by guessing the **correct suit** of the next card.
