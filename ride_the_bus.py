@@ -10,28 +10,45 @@ Aim: User is trying to make the correcr guess on each card they are dealt.
     3. inside or outside
 '''
 from time import sleep
+rules = open('README.md') #allows README.md to be read as the rules
 
 red_cards = list(range(1, 14))* 2
 black_cards = list(range(1, 14))* 2
 
 #setting the atmosphere for the game
 print("Let's play...")
-sleep(2)
+sleep(1)
 print("===== RIDE THE BUS =====")
-sleep(2)
+sleep(1)
 print("*applause*")
-sleep(2)
+sleep(1)
 
-response = str(input("Do you know how to play? Y/N "))
-if response == "Y":
-    print("Let's go then!")
-elif response == "N":
-    print("Aim of the game: Guess all three rounds correctly to win.\nHow to play:\nThe dealer has shuffled a pack of 52 cards and will deal you one card for each round.\nbefore the card is revealed you will be asked a question.\nIf you guessed correctly the game continues until you have completeted all three rounds.\nIf you guessed incorrectly, you lose, try again.")
+def begin(): #game introduction/rules
+    response = str(input("Do you know how to play? Y/N "))
+    if response == "Y":
+        print("Let's Go!")
+        sleep(1)
+    elif response == "N":
+        print("\n Aim: Guess all 3 rounds correctly to win\n\n" + rules.read())
+        ready_input = input("Ready to play? Y/N ")
+        if ready_input == "Y":
+            print("Let's Go!")
+            sleep(1)
+        elif ready_input == "N":
+            print("You are the weakest link.. goodbye")
+            exit()
+        else:
+            print("Please answer with Y or N")
+            begin()
+    else:
+        print("Please answer with Y or N")
+        begin()
 
+begin()
 # starting first level of game, red or black?
 # user is dealt a card from shuffled deck
 
 # user makes a guess
-print("Red or Black?")
+r_or_b = input('Red or Black? R/B ')
 
 
